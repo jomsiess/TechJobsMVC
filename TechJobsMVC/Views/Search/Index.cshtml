@@ -26,8 +26,31 @@
 
     <hr />
 
-    @{
-        //TODO #4: Loop over the search results to display all job fields.
+    @*//TODO #4: Loop over the search results to display all job fields.
+        //need to see if list of jobs actually has jobs in it... ViewBag.jobs.count == 0?
+        //check if it has jobs then cycle through it using the job object properties.*@
+    <td>
+        <ul>
+            <li>
+                <a asp-controller="Search" asp-action="Index" asp-route-column="searchType" asp-route-value="searchTerm">Results</a>
+            </li>
+        </ul>
+    </td>
+    @if (ViewBag.jobs != null)
+    {
+        <table>
+            @foreach (var job in ViewBag.jobs)
+            {
+                <tr>
+                    <td>
+                        <p>ID: @job.Id</p>
+                        <p>Name: @job.Name</p>
+                        <p>Employer: @job.Employer</p>
+                        <p>Location: @job.CoreCompetency</p>
+                    </td>
+                </tr>
+            }
+        </table>
     }
-
 </div>
+
