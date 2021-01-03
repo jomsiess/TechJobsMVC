@@ -33,14 +33,16 @@
     @if (ViewBag.jobs != null)
     {
         <table>
-            @foreach (var job in ViewBag.jobs)
+            @foreach (var jobs in ViewBag.jobs)
             {
                 <tr>
                     <td>
-                        <p>ID: @job.Id</p>
-                        <p>Name: @job.Name</p>
-                        <p>Employer: @job.Employer</p>
-                        <p>Location: @job.CoreCompetency</p>
+                        <p>ID: @jobs.Id</p>
+                        <p>Name: @jobs.Name</p>
+                        <p>Employer: @jobs.Employer</p>
+                        <p>Location: @jobs.Location</p>
+                        <p>Position Type: @jobs.PositionType</p>
+                        <p>Skill: @jobs.CoreCompetency</p>
                     </td>
                 </tr>
             }
